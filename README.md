@@ -1,2 +1,2 @@
 # telegram-bot
-telegram bot repo
+Telegram bot-forecaster - @weatherinfobot_bot
