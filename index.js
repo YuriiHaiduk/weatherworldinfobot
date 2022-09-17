@@ -1,71 +1,188 @@
-const telegramApi = require('node-telegram-bot-api');
+const { Telegraf,Markup,Composer} = require('telegraf');
+require('dotenv').config();
+// const token = '5177502021:AAHVFoTp2iQbwyFVu3ODg2EdUkf-eVAC-qo';
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
-const {gameOptions,againOptions} = require('./options');
+var XMLHttpRequest = require('xhr2');
 
-const token = '5109459251:AAHATt1dduhRNhEq7v5wwtnXq456D9awwyE';
+const {commands,CityListButtons,citylist,citylistRu,CityListButtonsRu} = require('./const');
 
-const bot = new telegramApi(token,{polling:true})
+const param = {
+    "url" : "https://api.openweathermap.org/data/2.5/",
+    "appid" : "498bea40fe54ae7f516ecbbab0779da8"
+}
 
-const chats = {};
+let lang = 'ru';
 
+async function getWeather(requestData,ctx) {
+    const url = `${param.url}weather?q=${requestData}&units=metric&lang=${encodeURIComponent(lang)}&APPID=${param.appid}`;
+    console.log(url)
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function() {
+        if(xhr.status != 404){
+            return showWeather(JSON.parse(xhr.responseText),ctx);
+        }
+        if(xhr.status === 404 && requestData != '/cityname'){
+            ctx.reply('Такого города не существует. Пожалуйста проверьте правильность написания города.')
+        }
+    }, false);
+    await  xhr.open('GET', url);
+    await  xhr.send();
+}
 
-
-const startGame = async (chatId) => {
-    await bot.sendMessage(chatId,'i will choose number from 0 to 9, you should to guess him');
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * (max));
+const showWeather = async (data,ctx) => {
+    let normilizeData = '';
+    let time = new Date();
+    if(lang === 'ru'){
+        normilizeData = `
+Погода в городе ${data['name']} ${(data['weather'][0]['main']).toLocaleLowerCase().indexOf('cloud') > 0 ? '☀' : '☁' } ${time.getDate()}.0${time.getMonth()+1}.${time.getFullYear()}
+Температура = 🌡 ${data['main']['temp']}
+Влажность = ${data['main']['humidity']}
+Давление = ${data['main']['pressure']}
+Погода =  ${data['weather']['0']['main']}
+Детали =  ${data['weather']['0'].description}
+Cкорость ветра =  🌬 ${data['wind']['speed']}
+`;
     }
-    const randomNumber = getRandomInt(6);
-    chats[chatId] = randomNumber;
-    await bot.sendMessage(chatId,'guess it!', gameOptions)
+
+    if(lang === 'en'){
+        normilizeData = `
+Weather in ${data['name']} ${(data['weather'][0]['main']).toLocaleLowerCase().indexOf('cloud') > 0 ? '☀' : '☁' } ${time.getMonth()+1}.${time.getDate()}.${time.getFullYear()}
+Temperature = 🌡 ${data['main']['temp']} 
+Humidity = ${data['main']['humidity']}
+Pressure = ${data['main']['pressure']}
+Weather =  ${data['weather']['0']['main']}
+Details =  ${data['weather']['0'].description}
+Wind speed =  🌬 ${data['wind']['speed']}
+`;
+    }
+    const answer = ()=>{
+        ctx.reply(normilizeData)
+        if(JSON.stringify(data['weather'][0]['main']).toLocaleLowerCase().indexOf('cloud') === 1){
+            ctx.replyWithPhoto('https://tlgrm.ru/_/stickers/9d4/44b/9d444bb6-d895-3ddc-9d38-44981f03bc65/30.jpg')
+        }
+        if(JSON.stringify(data['weather'][0]['main']).toLocaleLowerCase().indexOf('clear') === 1){
+            ctx.replyWithPhoto('https://tlgrm.ru/_/stickers/9d4/44b/9d444bb6-d895-3ddc-9d38-44981f03bc65/192/24.jpg')
+        }
+    }
+    return answer();
 }
 
+bot.start(async (ctx) => {
+    await  ctx.reply(
+        'Добрый день. \nЯ бот-синоптик, помогу узнать тебе погоду\n' +
+        'Good day. I`m bot-forecaster i will help you to know weather\n',
+    );
+    await ctx.reply(commands);
+    Markup.inlineKeyboard(
+        [
+            [Markup.button.callback('RU','RU',),
+                Markup.button.callback('EN','EN'),
+            ],
+        ]
+    )
+});
 
 
-const start = () => {
-    bot.setMyCommands([
-        {command:'/start', description: 'Начальное приветствие'},
-        {command:'/info', description: 'Описание'},
-        {command:'/game', description: 'guess a number'},
-    ])
+bot.help((ctx) => ctx.reply(commands));
 
-    bot.on('message',async msg =>{
-        const text = msg.text;
-        const chatId = msg.chat.id;
+bot.command('cityname',async(ctx)=>{
+    await ctx.telegram.sendMessage(ctx.message.chat.id, `Напишите название города:`)
+})
 
-        if(text === '/start'){
-            await bot.sendSticker(chatId,'https://tlgrm.ru/_/stickers/80a/5c9/80a5c9f6-a40e-47c6-acc1-44f43acc0862/1.webp');
-            return   bot.sendMessage(chatId, 'Добро пожаловать ты написал телеграм боту Тьюринга - короля мемов', {
-                parse_mode: 'Markdown',
-            });
+bot.command('citychoose',async (ctx)=>{
+    try{
+        let text = '';
+        if(lang === 'ru'){
+            text = 'Список городов';
+            await ctx.replyWithHTML(`<b>${text}</b>`, CityListButtonsRu)
         }
-        if(text == '/info'){
-            return bot.sendMessage(chatId,`Тебя зовут ${msg.from.first_name}`);
+        if(lang === 'en'){
+            text = 'City list';
+            await ctx.replyWithHTML(`<b>${text}</b>`, CityListButtons)
         }
 
-        if(text == '/game'){
-            startGame(chatId);
+    }catch (e) {
+        console.error(e)
+    }
+})
+
+
+bot.command('lang',async(ctx)=>{
+    let text = '';
+    if(lang === 'ru'){
+        text = 'Выбор языка';
+        await ctx.reply('Текущий язык - русский');
+    }
+    if(lang === 'en'){
+        text = 'Choose a language';
+        await ctx.reply('Current language - English');
+    }
+    await ctx.replyWithHTML(`<b>${text}</b>`,
+        Markup.inlineKeyboard(
+            [
+                [Markup.button.callback('RU','RU',),
+                    Markup.button.callback('EN','EN'),
+                ],
+            ]
+        )
+    );
+})
+
+bot.action('RU',async (ctx)=>{
+    try{
+        await ctx.answerCbQuery()
+        lang = 'ru';
+        await ctx.reply('Выбран новый язык - русский');
+
+    }catch(e){
+        console.log(e)
+    }
+});
+bot.action(`EN`,async (ctx)=>{
+    try{
+        await ctx.answerCbQuery()
+        lang = 'en';
+        await ctx.reply('You have chosen English');
+
+    }catch(e){
+        console.log(e)
+    }
+});
+
+citylistRu.forEach(function (element) {
+    bot.action(`${element}`,async (ctx)=>{
+        try{
+            await ctx.answerCbQuery()
+            getWeather(`${element}`,ctx);
+
+        }catch(e){
+            console.log(e)
         }
-
-        return bot.sendMessage(chatId,'Не могу распознать команды, попробуй ещё раз')
-
     });
+})
 
-    bot.on('callback_query' ,async msg => {
-        const data = msg.data;
-        const chatId = msg.message.chat.id;
-        if(data === '/again'){
-           return  startGame(chatId);
-        }
-        if(data == chats[chatId]){
-            return  bot.sendMessage(chatId,`congratulations you are guessed a number - ${data}` , againOptions )
-        }
-        else{
-            return bot.sendMessage(chatId,`unfortunatly you are'nt guessed, number was a - ${chats[chatId]}`, againOptions )
-        }
-        bot.sendMessage(chatId,`You choose number ${data}`)
+citylist.forEach(function (element) {
+    bot.action(`${element}`,async (ctx)=>{
+        try{
+            await ctx.answerCbQuery()
+            getWeather(`${element}`,ctx);
 
-    })
-}
+        }catch(e){
+            console.log(e)
+        }
+    });
+})
 
-start();
+bot.on('text', async(ctx) => {
+    await getWeather(encodeURIComponent(ctx.message.text), ctx);
+})
+
+
+
+bot.launch()
+
+// Enable graceful stop
+process.once('SIGINT', () => bot.stop('SIGINT'))
+process.once('SIGTERM', () => bot.stop('SIGTERM'))
+
