@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e0f9de84-e9e9-4d1a-aaf3-91035d14445e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Ew86vJkBIs3YlUPpuqsQRpnDnV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="npm.buld">
+    <configuration name="buld" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="buld" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.buld" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0f9de84-e9e9-4d1a-aaf3-91035d14445e" name="Default Changelist" comment="" />
+      <created>1663495114727</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663495114727</updated>
+      <workItem from="1663495116085" duration="5391000" />
+    </task>
+    <task id="LOCAL-00001" summary="update - add token">
+      <created>1663495340017</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663495340017</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add const file">
+      <created>1663498077992</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663498077992</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <MESSAGE value="update - add token" />
+    <MESSAGE value="add const file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add const file" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="694" y="366" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1663496498497">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="694" y="366" key="#com.intellij.fileTypes.FileTypeChooser/0.46.1920.1034@0.46.1920.1034" timestamp="1663496498497" />
+    <state x="540" y="148" key="CommitChangelistDialog2" timestamp="1663498077591">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="540" y="148" key="CommitChangelistDialog2/0.46.1920.1034@0.46.1920.1034" timestamp="1663498077591" />
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1663499441952">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1663499441952">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1663499441952">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1663499441952">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
+    <state x="552" y="296" key="Vcs.Push.Dialog.v2" timestamp="1663498080142">
+      <screen x="0" y="46" width="1920" height="1034" />
+    </state>
+    <state x="552" y="296" key="Vcs.Push.Dialog.v2/0.46.1920.1034@0.46.1920.1034" timestamp="1663498080142" />
+  </component>
+</project>

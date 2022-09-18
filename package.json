@@ -1,21 +1,12 @@
 {
-  "name": "telegrambot",
+  "name": "telebot-vercel",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "PonomareVlad",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "vc dev",
+    "tunnel": "lt --port 3000 & vc dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.0",
-    "node-fetch": "^3.2.3",
-    "node-telegram-bot-api": "^0.56.0",
-    "nodemon": "^2.0.15",
-    "telegraf": "^4.7.0",
-    "xhr2": "^0.2.1"
+    "telebot": "latest"
   }
 }
