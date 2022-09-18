@@ -20,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="otherTemplate" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663495114727</updated>
-      <workItem from="1663495116085" duration="5391000" />
+      <workItem from="1663495116085" duration="5767000" />
     </task>
     <task id="LOCAL-00001" summary="update - add token">
       <created>1663495340017</created>
@@ -102,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663498077992</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add other template for telegram bot">
+      <created>1663500609599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663500609599</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,36 +119,37 @@
     <MESSAGE value="update" />
     <MESSAGE value="update - add token" />
     <MESSAGE value="add const file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add const file" />
+    <MESSAGE value="add other template for telegram bot" />
+    <option name="LAST_COMMIT_MESSAGE" value="add other template for telegram bot" />
   </component>
   <component name="WindowStateProjectService">
     <state x="694" y="366" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1663496498497">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
     <state x="694" y="366" key="#com.intellij.fileTypes.FileTypeChooser/0.46.1920.1034@0.46.1920.1034" timestamp="1663496498497" />
-    <state x="540" y="148" key="CommitChangelistDialog2" timestamp="1663498077591">
+    <state x="540" y="148" key="CommitChangelistDialog2" timestamp="1663500609117">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="540" y="148" key="CommitChangelistDialog2/0.46.1920.1034@0.46.1920.1034" timestamp="1663498077591" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1663499441952">
+    <state x="540" y="148" key="CommitChangelistDialog2/0.46.1920.1034@0.46.1920.1034" timestamp="1663500609117" />
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1663500878762">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1663499441952">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.46.1920.1034@0.46.1920.1034" timestamp="1663500878762" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1663500878762">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1663499441952">
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.46.1920.1034@0.46.1920.1034" timestamp="1663500878762" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1663500878762">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1663499441952">
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.46.1920.1034@0.46.1920.1034" timestamp="1663500878762" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1663500878762">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.46.1920.1034@0.46.1920.1034" timestamp="1663499441952" />
-    <state x="552" y="296" key="Vcs.Push.Dialog.v2" timestamp="1663498080142">
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.46.1920.1034@0.46.1920.1034" timestamp="1663500878762" />
+    <state x="552" y="296" key="Vcs.Push.Dialog.v2" timestamp="1663500615939">
       <screen x="0" y="46" width="1920" height="1034" />
     </state>
-    <state x="552" y="296" key="Vcs.Push.Dialog.v2/0.46.1920.1034@0.46.1920.1034" timestamp="1663498080142" />
+    <state x="552" y="296" key="Vcs.Push.Dialog.v2/0.46.1920.1034@0.46.1920.1034" timestamp="1663500615939" />
   </component>
 </project>
