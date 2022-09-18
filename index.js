@@ -1,7 +1,7 @@
 const { Telegraf,Markup,Composer} = require('telegraf');
 require('dotenv').config();
-// const token = '5177502021:AAHVFoTp2iQbwyFVu3ODg2EdUkf-eVAC-qo';
-const bot = new Telegraf(process.env.BOT_TOKEN);
+
+const bot = new Telegraf('5177502021:AAHVFoTp2iQbwyFVu3ODg2EdUkf-eVAC-qo');
 
 var XMLHttpRequest = require('xhr2');
 
@@ -58,12 +58,12 @@ Wind speed =  🌬 ${data['wind']['speed']}
     }
     const answer = ()=>{
         ctx.reply(normilizeData)
-        if(JSON.stringify(data['weather'][0]['main']).toLocaleLowerCase().indexOf('cloud') === 1){
-            ctx.replyWithPhoto('https://tlgrm.ru/_/stickers/9d4/44b/9d444bb6-d895-3ddc-9d38-44981f03bc65/30.jpg')
-        }
-        if(JSON.stringify(data['weather'][0]['main']).toLocaleLowerCase().indexOf('clear') === 1){
-            ctx.replyWithPhoto('https://tlgrm.ru/_/stickers/9d4/44b/9d444bb6-d895-3ddc-9d38-44981f03bc65/192/24.jpg')
-        }
+        // if(JSON.stringify(data['weather'][0]['main']).toLocaleLowerCase().indexOf('cloud') === 1){
+        //     ctx.replyWithPhoto('https://tlgrm.ru/_/stickers/9d4/44b/9d444bb6-d895-3ddc-9d38-44981f03bc65/30.jpg')
+        // }
+        // if(JSON.stringify(data['weather'][0]['main']).toLocaleLowerCase().indexOf('clear') === 1){
+        //     ctx.replyWithPhoto('https://tlgrm.ru/_/stickers/9d4/44b/9d444bb6-d895-3ddc-9d38-44981f03bc65/192/24.jpg')
+        // }
     }
     return answer();
 }
